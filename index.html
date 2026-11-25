@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HabitLife Admin</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,system-ui;background:#f5f5f7;color:#111;padding:20px}
+h1{font-size:26px;margin:0 0 4px}p{color:#6e6e73;font-size:14px}
+.card{background:#fff;border-radius:20px;padding:18px;margin:14px 0;box-shadow:0 6px 20px rgba(0,0,0,.06)}
+button{width:100%;padding:14px;border:0;border-radius:14px;background:#0a84ff;color:#fff;font-weight:600;font-size:15px;margin:6px 0}
+code{font-size:12px;color:#6e6e73}
+</style></head><body>
+<h1>HabitLife Admin</h1><p>Панель управления внутри Telegram</p>
+<div class="card"><b>Команды бота</b><p>Нажмите кнопку — команда отправится в чат с ботом.</p>
+<button onclick="cmd('/users')">👥 Список пользователей</button>
+<button onclick="cmd('/stats')">📊 Статистика</button>
+<button onclick="cmd('/start')">🏠 Главное меню</button></div>
+<div class="card"><b>Поиск по почте</b><input id="q" placeholder="email или имя" style="width:100%;padding:12px;border-radius:12px;border:1px solid #ddd">
+<button onclick="cmd('/find ' + document.getElementById('q').value)">🔍 Найти</button></div>
+<div class="card"><b>Выдача админа</b><input id="e" placeholder="email@example.com" style="width:100%;padding:12px;border-radius:12px;border:1px solid #ddd">
+<button onclick="cmd('/grant ' + document.getElementById('e').value)">🛡 Выдать админ</button>
+<button onclick="cmd('/revoke ' + document.getElementById('e').value)">Снять админ</button></div>
+<script>
+function cmd(c){location.href='https://t.me/habitlife_admin_bot?start='+encodeURIComponent(c.slice(1));}
+</script></body></html>
